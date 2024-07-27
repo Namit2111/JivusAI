@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jivus AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Jivus AI</h1>
+        <form method="post">
+            <input type="text" name="product_url" placeholder="Enter product URL" required>
+            <textarea name="questions" placeholder="Enter questions separated by newline"></textarea>
+            <input type="submit" value="Get Answers">
+        </form>
+    </div>
+</body>
+</html>
