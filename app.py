@@ -2,7 +2,9 @@ from flask import Flask, request, render_template
 from bs4 import BeautifulSoup
 import requests
 from utils.gemini import generate_answer
-
+import os 
+from dotenv import load_dotenv
+load_dotenv()
 app = Flask(__name__)
 
 # Function to extract text from the product website
@@ -20,7 +22,7 @@ def process_questions(questions, product_url):
     answers = []
     website_text = extract_text_from_website(product_url)
     for question in questions:
-        answer = generate_answer(question, website_text)
+        answer = generate_answer(os.getenv('api'),question, website_text)
         answers.append((question, answer))
     return answers
 
